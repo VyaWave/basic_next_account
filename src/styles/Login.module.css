@@ -12,21 +12,46 @@
 
 .main {
   flex: 1;
-  background: url(../assets/login-bg.png) no-repeat;
+  background: linear-gradient(to left bottom, hsl(24, 100%, 85%) 0%,hsl(248, 100%, 85%) 100%);
   height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
+ .main:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background-blend-mode: var(--cover-background-blend-mode); */
+  background-color: rgb(128, 158, 179);
+  background-image: radial-gradient(at center 115%, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0));
+}
+
+.main:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
 .ctxWrapper {
+  padding-top: 60px;
   width: 420px;
-  height: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 100;
 }
 
 .tips {

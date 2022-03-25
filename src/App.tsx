@@ -13,6 +13,7 @@ import styles from './styles/Login.module.css';
 import 'rsuite/dist/rsuite.min.css'
 import './styles/globals.css'
 
+import icon from './assets/icon.svg';
 
 type MessageType = 'info' | 'success' | 'warning' | 'error';
 
@@ -97,9 +98,21 @@ const Login = () => {
       });
   };
 
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
+        <img
+          src={icon}
+          data-origin="_media/icon.svg"
+          alt="logo"
+          width="250"
+          height="60"
+          style={{
+            zIndex: 100,
+            position: 'relative'
+          }}
+        ></img>
         { !loginSystem ? <div className={styles.ctxWrapper}>
           <InputGroup inside style={layout} className={styles.input}>
             <InputGroup.Addon>
