@@ -58,7 +58,7 @@ const Login = () => {
   };
 
   const handleSignUp = () => {
-    const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+    const baseURL = import.meta.env.VITE_BASE_URL;
 
     return axios
       .post(`${baseURL}/account/register`, {
@@ -67,6 +67,8 @@ const Login = () => {
       })
       .then((res: any) => {
         if (res.data.code == 200) {
+          setLoginSystem(true)
+
           toaster.push(
             message({ type: 'success', title: '提示', content: '注册成功' }),
             {
@@ -78,7 +80,7 @@ const Login = () => {
   };
 
   const handleLogin = () => {
-    const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+    const baseURL = import.meta.env.VITE_BASE_URL;
 
     return axios
       .post(`${baseURL}/account/login`, {
@@ -88,6 +90,7 @@ const Login = () => {
       .then((res: any) => {
         console.info(res);
         if (res.data.code == 200) {
+          setLoginSystem(true)
           toaster.push(
             message({ type: 'success', title: '提示', content: '登录成功' }),
             {
